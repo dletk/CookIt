@@ -176,12 +176,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MGY-Qg-AHe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MGY-Qg-AHe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="sH8-mg-rk9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sellItemCell" rowHeight="95" id="sH8-mg-rk9" customClass="ItemSellCell" customModule="Macathon2017" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sH8-mg-rk9" id="BXb-DE-8x5">
@@ -238,6 +238,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemImage" destination="bUu-DR-ci4" id="r4l-cJ-BNV"/>
+                                            <outlet property="itemName" destination="KkV-Rx-RJ7" id="QnW-pH-lhb"/>
+                                            <outlet property="itemPriceLabel" destination="mUF-XP-huT" id="pZ2-bo-lCa"/>
+                                            <outlet property="itemServingLabel" destination="5hT-DQ-F1u" id="a1v-VB-1yX"/>
+                                            <outlet property="itemType" destination="nJD-hA-VsN" id="mFF-SV-f7f"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -246,10 +253,13 @@
                         <viewLayoutGuide key="safeArea" id="PLe-Vc-lCM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Currently Offering" id="1AZ-gN-4x4"/>
+                    <connections>
+                        <outlet property="currentOfferItemsTableView" destination="MGY-Qg-AHe" id="dPX-lR-jCo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTp-vp-mZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="-944.07796101949032"/>
+            <point key="canvasLocation" x="852" y="-945"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l5l-It-OeL">
@@ -275,6 +285,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ot7-r2-cj9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EsZ-wa-whM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
