@@ -48,5 +48,19 @@ class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         return cell
     }
+    
+    @IBAction func locationButtonTouched(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Location", message: "Choose a location", preferredStyle: .actionSheet)
+        // Here we need to retrieve the data from server to get the list of locations
+        let listLocations = ["Macalester College", "Saint Paul", "Mineapollis"]
+        for location in listLocations {
+            let locationAction = UIAlertAction(title: location, style: .destructive, handler: {(actionSender) in
+                sender.setTitle(location, for: .normal)
+            })
+            alertController.addAction(locationAction)
+        }
+        self.present(alertController, animated: true, completion: nil)
+        // TODO: Refresh the list of dishes as well.
+    }
 }
 
