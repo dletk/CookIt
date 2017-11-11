@@ -163,12 +163,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3hn-7h-m4y">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3hn-7h-m4y">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="P5F-7H-Xzi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="previousSellCell" rowHeight="95" id="P5F-7H-Xzi" customClass="PreviousItemSellCell" customModule="Macathon2017" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P5F-7H-Xzi" id="awk-uF-6in">
@@ -225,14 +225,28 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemImage" destination="6iV-kg-9xi" id="Vtj-fy-WKe"/>
+                                            <outlet property="itemName" destination="V2R-77-r2Z" id="cpj-R6-1Wq"/>
+                                            <outlet property="itemPriceLabel" destination="6G0-5R-fIQ" id="7dT-BH-fi2"/>
+                                            <outlet property="itemServingLabel" destination="YOL-ya-3nv" id="mBr-hd-eEh"/>
+                                            <outlet property="itemType" destination="iEI-b2-7SU" id="gYQ-C9-0Ef"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="G4J-5a-EMf" id="f9j-90-9rj"/>
+                                    <outlet property="delegate" destination="G4J-5a-EMf" id="bg9-8J-qCf"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6zh-Tb-feV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Previously Offering" id="e77-0Q-rZ3"/>
+                    <connections>
+                        <outlet property="previousOfferItemsTableView" destination="3hn-7h-m4y" id="Iwn-Cc-Flr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCi-ie-uLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,6 +331,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XmG-5P-anL" id="Mso-Xg-cTL"/>
+                                    <outlet property="delegate" destination="XmG-5P-anL" id="o0D-gl-3vX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -324,12 +342,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Currently Offering" id="1AZ-gN-4x4"/>
                     <connections>
-                        <outlet property="currentOfferItemsTableView" destination="MGY-Qg-AHe" id="dPX-lR-jCo"/>
+                        <outlet property="currentOfferItemsTableView" destination="MGY-Qg-AHe" id="yAv-7f-sXy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTp-vp-mZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="-945"/>
+            <point key="canvasLocation" x="1196" y="-924"/>
         </scene>
         <!--Adding ItemVC-->
         <scene sceneID="9Pg-jx-0tS">
@@ -340,14 +358,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iya-z3-oha" userLabel="Item Text Field">
-                                <rect key="frame" x="105" y="189" width="254" height="30"/>
+                                <rect key="frame" x="93" y="101" width="254" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Item:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eNH-WF-6Cu" userLabel="Item">
-                                <rect key="frame" x="16" y="189" width="81" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Item:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eNH-WF-6Cu" userLabel="Item">
+                                <rect key="frame" x="27" y="101" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -360,13 +378,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Time:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jIS-jx-RPW" userLabel="Time">
-                                <rect key="frame" x="16" y="227" width="81" height="35.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cA0-fa-I2m" userLabel="Location Text Field">
                                 <rect key="frame" x="105" y="265" width="254" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -374,21 +385,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Location:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uJu-oW-V3P" userLabel="Location">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Location:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uJu-oW-V3P" userLabel="Location">
                                 <rect key="frame" x="16" y="265" width="81" height="35.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Service:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k2W-s1-91L" userLabel="Service">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Service:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="k2W-s1-91L" userLabel="Service">
                                 <rect key="frame" x="16" y="308" width="81" height="35.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Price:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vLL-j3-t7B" userLabel="Price">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Price:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vLL-j3-t7B" userLabel="Price">
                                 <rect key="frame" x="16" y="342" width="81" height="35.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -410,7 +421,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Servings:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-tp-9GH" userLabel="Servings">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Servings:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-tp-9GH" userLabel="Servings">
                                 <rect key="frame" x="16" y="385" width="81" height="35.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -424,6 +435,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Time:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jIS-jx-RPW" userLabel="Time">
+                                <rect key="frame" x="19" y="221" width="66" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="nHe-SQ-ttj"/>
@@ -442,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvA-db-C43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975" y="-1654"/>
+            <point key="canvasLocation" x="1973.5999999999999" y="-1654.7226386806599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l5l-It-OeL">

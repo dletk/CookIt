@@ -30,12 +30,12 @@ class AddingItemVC: UIViewController {
     
 
     @IBAction func addButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "SellerMainVC", sender: <#T##Any?#>)
+        dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        <#code#>
+//    }
     
     
     /*

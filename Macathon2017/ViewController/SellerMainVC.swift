@@ -18,13 +18,12 @@ class SellerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     
     @IBOutlet weak var currentOfferItemsTableView: UITableView!
     
+    @IBOutlet weak var previousOfferItemsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        currentOfferItemsTableView.delegate = self
-        currentOfferItemsTableView.dataSource = self
         listItems.append(item1)
         listItems.append(item2)
         listItems.append(item3)
@@ -50,19 +49,35 @@ class SellerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "sellItemCell", for: indexPath) as? ItemSellCell else {
-            fatalError("Cannot deque the cell")
+        if self.tabBarController?.selectedIndex == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "sellItemCell", for: indexPath) as? ItemSellCell else {
+                fatalError("Cannot deque the cell")
+            }
+            let item = listItems[indexPath.row]
+        
+            cell.itemName.text = item.itemName
+            cell.itemPriceLabel.text = String(item.price)
+            cell.itemServingLabel.text = String(item.expectedNumOfServings)
+            cell.itemType.text = item.type
+            cell.itemImage.image = item.itemImage
+        
+        
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "previousSellCell", for: indexPath) as? PreviousItemSellCell else {
+                fatalError("Cannot deque the cell")
+            }
+            let item = listItems[indexPath.row]
+            
+            cell.itemName.text = item.itemName
+            cell.itemPriceLabel.text = String(item.price)
+            cell.itemServingLabel.text = String(item.expectedNumOfServings)
+            cell.itemType.text = item.type
+            cell.itemImage.image = item.itemImage
+            
+            
+            return cell
         }
-        let item = listItems[indexPath.row]
-        
-        cell.itemName.text = item.itemName
-        cell.itemPriceLabel.text = String(item.price)
-        cell.itemServingLabel.text = String(item.expectedNumOfServings)
-        cell.itemType.text = item.type
-        cell.itemImage.image = item.itemImage
-        
-        
-        return cell
     }
     
     
