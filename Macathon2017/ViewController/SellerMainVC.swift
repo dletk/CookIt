@@ -65,6 +65,7 @@ class SellerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
+    
 
     /*
     // MARK: - Navigation
