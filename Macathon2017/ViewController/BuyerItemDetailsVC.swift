@@ -10,10 +10,33 @@ import UIKit
 
 class BuyerItemDetailsVC: UIViewController {
 
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var itemTimeLabel: UILabel!
+    @IBOutlet weak var itemAddressLabel: UILabel!
+    @IBOutlet weak var itemLocationLabel: UILabel!
+    @IBOutlet weak var itemPriceLabel: UILabel!
+    @IBOutlet weak var itemServingLabel: UILabel!
+    @IBOutlet weak var itemTypeLabel: UILabel!
+    @IBOutlet weak var itemServiceLabel: UILabel!
+    @IBOutlet weak var itemImageView: UIImageView!
+    
+    var item: Item?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let item = self.item {
+            itemNameLabel.text = item.itemName
+            itemPriceLabel.text = String(describing: item.price)
+            itemTimeLabel.text = item.time
+            itemTypeLabel.text = item.type
+            itemServiceLabel.text = item.serviceType
+            itemAddressLabel.text = item.address
+            itemLocationLabel.text = item.location
+            itemImageView.image = UIImage(data: item.itemImage as Data)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +44,10 @@ class BuyerItemDetailsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func cancelButtonTouched(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

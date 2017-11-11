@@ -29,7 +29,7 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var servingTextField: UITextField!
     @IBOutlet weak var itemImageView: UIImageView!
@@ -81,6 +81,9 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         guard let location = locationButton.currentTitle else {
             fatalError()
         }
+        guard let address = addressTextField.text else {
+            fatalError()
+        }
         guard let price = priceTextField.text else {
             fatalError()
         }
@@ -118,7 +121,7 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             service = .delivery
         }
         
-        let newItem = Item(itemName: itemName, price: Double(price)!, location: location, type: type.rawValue, expectedNumOfServings: Int(servings)!, serviceType: service.rawValue, itemImage: imageData as NSData, time: time)
+        let newItem = Item(itemName: itemName, price: Double(price)!, location: location, address: address, type: type.rawValue, expectedNumOfServings: Int(servings)!, serviceType: service.rawValue, itemImage: imageData as NSData, time: time)
         itemManager.addNewItem(item: newItem!)
         
         dismiss(animated: true, completion: nil)
@@ -203,7 +206,7 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.timeTextField.inputAccessoryView = doneToolbar
         self.servingTextField.inputAccessoryView = doneToolbar
         self.priceTextField.inputAccessoryView = doneToolbar
-        self.locationTextField.inputAccessoryView = doneToolbar
+        self.addressTextField.inputAccessoryView = doneToolbar
     }
     
     // Gets rid of the number pad when the user hits "Done"
@@ -212,7 +215,7 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.timeTextField.resignFirstResponder()
         self.servingTextField.resignFirstResponder()
         self.priceTextField.resignFirstResponder()
-        self.locationTextField.resignFirstResponder()
+        self.addressTextField.resignFirstResponder()
     }
     
     

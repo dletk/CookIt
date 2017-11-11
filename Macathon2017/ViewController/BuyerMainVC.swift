@@ -56,6 +56,23 @@ class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "BuyerToDetailsSegue", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let indexPath = buyItemsTableView.indexPathForSelectedRow else {
+            fatalError()
+        }
+        let item = listItems[indexPath.row]
+        if segue.identifier == "BuyerToDetailsSegue" {
+            if let destination = segue.destination as? BuyerItemDetailsVC {
+                destination.item = item
+            }
+        }
+    }
+    
     @IBAction func locationButtonTouched(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Location", message: "Choose a location", preferredStyle: .alert)
         // Here we need to retrieve the data from server to get the list of locations

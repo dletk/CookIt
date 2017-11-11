@@ -46,8 +46,9 @@ class Item: Object {
     @objc dynamic var expectedNumOfServings: Int = 0
     @objc dynamic var serviceType: String = ""
     @objc dynamic var itemImage: NSData = NSData()
+    @objc dynamic var address: String = ""
     
-    convenience  init?(itemName: String, price: Double, location: String, type: String, expectedNumOfServings: Int, serviceType: String, itemImage: NSData, time: String) {
+    convenience  init?(itemName: String, price: Double, location: String, address: String, type: String, expectedNumOfServings: Int, serviceType: String, itemImage: NSData, time: String) {
         if itemName == "" {
             return nil
         }
@@ -62,6 +63,7 @@ class Item: Object {
         self.serviceType = serviceType
         self.itemImage = itemImage
         self.time = time
+        self.address = address
     }
     
 }

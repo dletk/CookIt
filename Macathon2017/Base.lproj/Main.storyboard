@@ -149,7 +149,7 @@
                     </view>
                     <connections>
                         <outlet property="buyItemsTableView" destination="x8r-io-WYb" id="PnZ-pp-Lhw"/>
-                        <segue destination="W7d-el-Ieo" kind="show" id="OP6-ek-fBI"/>
+                        <segue destination="W7d-el-Ieo" kind="show" identifier="BuyerToDetailsSegue" id="OP6-ek-fBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNV-nH-8Up" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -375,7 +375,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="STP-HE-nB3" id="1s6-zQ-IJP"/>
+                                    <outlet property="delegate" destination="STP-HE-nB3" id="Pjt-l4-LY9"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5.38" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1f-aK-zhO" userLabel="Price Text Field">
@@ -494,10 +494,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressTextField" destination="cA0-fa-I2m" id="bTR-Cy-nQM"/>
                         <outlet property="itemImageView" destination="tbY-M8-h3g" id="EB3-xt-ozT"/>
                         <outlet property="itemTextField" destination="iya-z3-oha" id="xhm-jJ-PTx"/>
                         <outlet property="locationButton" destination="cVU-q8-HpO" id="NOK-o7-SHD"/>
-                        <outlet property="locationTextField" destination="cA0-fa-I2m" id="fcG-e5-s7P"/>
                         <outlet property="priceTextField" destination="Z1f-aK-zhO" id="m6X-Z3-Kpg"/>
                         <outlet property="serviceButton" destination="a8c-IQ-Eld" id="Jcl-Rm-jHi"/>
                         <outlet property="servingTextField" destination="Hdz-vS-8GX" id="IwV-jA-xzB"/>
@@ -688,15 +688,18 @@
                         <viewLayoutGuide key="safeArea" id="Ofv-ET-4z9"/>
                     </view>
                     <navigationItem key="navigationItem" id="mb6-14-4h6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6K5-m0-eIG">
-                            <connections>
-                                <action selector="cancelButtonTouched:" destination="W7d-el-Ieo" id="aUK-RN-vb2"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pQn-Ft-zF3"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="itemImageView" destination="2xD-NQ-O0a" id="hld-Nf-HqE"/>
+                        <outlet property="itemAddressLabel" destination="owO-lw-Foq" id="nK6-de-eqE"/>
+                        <outlet property="itemImageView" destination="2xD-NQ-O0a" id="wfv-gA-CBU"/>
+                        <outlet property="itemLocationLabel" destination="Wq6-n0-1tv" id="R6E-cg-u4v"/>
+                        <outlet property="itemNameLabel" destination="ifC-sV-VRt" id="YST-sl-a2B"/>
+                        <outlet property="itemPriceLabel" destination="x3D-qQ-bKK" id="see-NJ-lvS"/>
+                        <outlet property="itemServiceLabel" destination="WLG-Zp-UyO" id="pTZ-kl-RAS"/>
+                        <outlet property="itemServingLabel" destination="0gq-qk-iL4" id="qPC-mk-VPK"/>
+                        <outlet property="itemTimeLabel" destination="jpn-05-kc9" id="zyi-31-bhP"/>
+                        <outlet property="itemTypeLabel" destination="hTv-5p-BSg" id="8rt-uY-7no"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoy-9M-ca6" userLabel="First Responder" sceneMemberID="firstResponder"/>
