@@ -10,6 +10,13 @@ import UIKit
 
 class AddingItemVC: UIViewController {
 
+    @IBOutlet weak var itemTextField: UITextField!
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var servingTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +29,15 @@ class AddingItemVC: UIViewController {
     }
     
 
+    @IBAction func addButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SellerMainVC", sender: <#T##Any?#>)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
+    }
+    
+    
     /*
     // MARK: - Navigation
 
