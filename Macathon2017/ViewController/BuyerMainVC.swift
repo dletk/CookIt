@@ -10,8 +10,10 @@ import UIKit
 
 class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let item1  = Item(itemName: "Chicken", price: 12.1, location: "Saint Paul", dietaryInfo: [DietaryInfo.peanut_watch], type: "Entree", expectedNumOfServings: 2, serviceType: ServiceType.pick_up)
-    
+    let item1  = Item(itemName: "Chicken", price: 12.1, location: "Saint Paul", dietaryInfo: [DietaryInfo.peanut_watch], type: "Entree", expectedNumOfServings: 2, serviceType: ServiceType.pick_up, itemImage: #imageLiteral(resourceName: "example1"))
+    let item2  = Item(itemName: "Pho", price: 9.0, location: "Saint Paul", dietaryInfo: [DietaryInfo.peanut_watch], type: "Entree", expectedNumOfServings: 6, serviceType: ServiceType.pick_up, itemImage: #imageLiteral(resourceName: "example2"))
+    let item3  = Item(itemName: "Banh xeo", price: 13.1, location: "Saint Paul", dietaryInfo: [DietaryInfo.peanut_watch], type: "Entree", expectedNumOfServings: 4, serviceType: ServiceType.pick_up, itemImage: #imageLiteral(resourceName: "example3"))
+    let item4  = Item(itemName: "Pho", price: 7.7, location: "Saint Paul", dietaryInfo: [DietaryInfo.peanut_watch], type: "Entree", expectedNumOfServings: 12, serviceType: ServiceType.pick_up, itemImage: #imageLiteral(resourceName: "example4"))
     private var listItems: [Item] = []
     @IBOutlet weak var buyItemsTableView: UITableView!
     
@@ -21,12 +23,15 @@ class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         buyItemsTableView.delegate = self
         buyItemsTableView.dataSource = self
         listItems.append(item1)
+        listItems.append(item2)
+        listItems.append(item3)
+        listItems.append(item4)
 
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return listItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,7 +43,7 @@ class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.itemPriceLabel.text = String(item.price)
         cell.itemServingLabel.text = String(item.expectedNumOfServings)
         cell.itemTypeLabel.text = item.type
-        
+        cell.itemImage.image = item.itemImage
         
         
         return cell

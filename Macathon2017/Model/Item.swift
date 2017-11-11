@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ServiceType {
     case pick_up
@@ -29,8 +30,9 @@ class Item {
     var type: String
     var expectedNumOfServings: Int
     var serviceType: ServiceType
+    var itemImage: UIImage
     
-    init(itemName: String, price: Double, location: String, dietaryInfo: [DietaryInfo], type: String, expectedNumOfServings: Int, serviceType: ServiceType) {
+    init(itemName: String, price: Double, location: String, dietaryInfo: [DietaryInfo], type: String, expectedNumOfServings: Int, serviceType: ServiceType, itemImage: UIImage) {
         self.itemName = itemName
         self.price = price
         self.location = location
@@ -38,6 +40,7 @@ class Item {
         self.expectedNumOfServings = expectedNumOfServings
         self.serviceType = serviceType
         self.dietaryInfo = dietaryInfo
+        self.itemImage = itemImage
     }
     
 }
