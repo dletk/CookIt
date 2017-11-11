@@ -40,13 +40,13 @@ class SellerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         if self.tabBarController?.selectedIndex == 0 {
+            listItems = itemManager.getAllItems()
             currentOfferItemsTableView.reloadData()
             // Only retrieve the items that seller is offering now
-            listItems = itemManager.getAllItems()
         } else {
+            listItems = itemManager.getAllItems()
             previousOfferItemsTableView.reloadData()
             // Only retrieve the items that seller has offered before
-            listItems = itemManager.getAllItems()
         }
     }
     
