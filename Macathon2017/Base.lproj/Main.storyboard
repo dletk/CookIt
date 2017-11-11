@@ -10,6 +10,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--CookIt-->
+        <scene sceneID="xKc-W1-9dJ">
+            <objects>
+                <viewController id="fX6-X8-cs6" customClass="LoginVC" customModule="Macathon2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kU2-97-3L2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-qG-c6E">
+                                <rect key="frame" x="156" y="279" width="63" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqc-uu-iQ4">
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Seller"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ude-un-znF">
+                                        <rect key="frame" x="0.0" y="67" width="63" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Buyer"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6qR-qG-c6E" firstAttribute="centerX" secondItem="kU2-97-3L2" secondAttribute="centerX" id="CVw-5W-iwG"/>
+                            <constraint firstItem="6qR-qG-c6E" firstAttribute="centerY" secondItem="kU2-97-3L2" secondAttribute="centerY" id="bz0-iy-HX7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="flS-k8-vbd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CookIt" id="tbY-ED-1AR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jWV-c1-U0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-797.60000000000002" y="-373.76311844077964"/>
+        </scene>
         <!--Buyer MainVC-->
         <scene sceneID="ghA-pV-4R1">
             <objects>
@@ -83,7 +120,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNV-nH-8Up" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-352.80000000000001" y="-385.45727136431788"/>
+            <point key="canvasLocation" x="-13.6" y="-385.45727136431788"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l5l-It-OeL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6vR-gQ-Rrs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qwb-uV-MKy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fX6-X8-cs6" kind="relationship" relationship="rootViewController" id="LJ0-mf-rba"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wml-QE-GUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1474" y="-374"/>
         </scene>
     </scenes>
 </document>
