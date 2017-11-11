@@ -80,6 +80,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kag-Vt-eLn"/>
                     </view>
+                    <connections>
+                        <outlet property="buyItemsTableView" destination="x8r-io-WYb" id="PnZ-pp-Lhw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNV-nH-8Up" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
