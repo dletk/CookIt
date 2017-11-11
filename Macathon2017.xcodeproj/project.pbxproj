@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BA9DB15747D38379311086F /* Pods_Macathon2017.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FB89C440256FB586104766 /* Pods_Macathon2017.framework */; };
 		4CA7C7301FB691800062B5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C72F1FB691800062B5A6 /* AppDelegate.swift */; };
-		4CA7C7321FB691800062B5A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7311FB691800062B5A6 /* ViewController.swift */; };
 		4CA7C7351FB691800062B5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7C7331FB691800062B5A6 /* Main.storyboard */; };
 		4CA7C7371FB691800062B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7C7361FB691800062B5A6 /* Assets.xcassets */; };
 		4CA7C73A1FB691800062B5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7C7381FB691800062B5A6 /* LaunchScreen.storyboard */; };
@@ -17,11 +17,13 @@
 /* Begin PBXFileReference section */
 		4CA7C72C1FB691800062B5A6 /* Macathon2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macathon2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA7C72F1FB691800062B5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4CA7C7311FB691800062B5A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CA7C7341FB691800062B5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CA7C7361FB691800062B5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CA7C7391FB691800062B5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CA7C73B1FB691800062B5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82ABB76B6095FCE605D0ADBC /* Pods-Macathon2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Macathon2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Macathon2017/Pods-Macathon2017.debug.xcconfig"; sourceTree = "<group>"; };
+		D397BF20E9BCD56DF2C29FEA /* Pods-Macathon2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Macathon2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-Macathon2017/Pods-Macathon2017.release.xcconfig"; sourceTree = "<group>"; };
+		E0FB89C440256FB586104766 /* Pods_Macathon2017.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Macathon2017.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA9DB15747D38379311086F /* Pods_Macathon2017.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AE9C24338F8A8E36A9F315D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0FB89C440256FB586104766 /* Pods_Macathon2017.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4CA7C7231FB691800062B5A6 = {
 			isa = PBXGroup;
 			children = (
 				4CA7C72E1FB691800062B5A6 /* Macathon2017 */,
 				4CA7C72D1FB691800062B5A6 /* Products */,
+				8039259EB56878E0828C9605 /* Pods */,
+				2AE9C24338F8A8E36A9F315D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +67,46 @@
 		4CA7C72E1FB691800062B5A6 /* Macathon2017 */ = {
 			isa = PBXGroup;
 			children = (
+				4CA7C7431FB691CE0062B5A6 /* ViewController */,
+				4CA7C7421FB691C00062B5A6 /* View */,
+				4CA7C7411FB691B70062B5A6 /* Model */,
 				4CA7C72F1FB691800062B5A6 /* AppDelegate.swift */,
-				4CA7C7311FB691800062B5A6 /* ViewController.swift */,
 				4CA7C7331FB691800062B5A6 /* Main.storyboard */,
 				4CA7C7361FB691800062B5A6 /* Assets.xcassets */,
 				4CA7C7381FB691800062B5A6 /* LaunchScreen.storyboard */,
 				4CA7C73B1FB691800062B5A6 /* Info.plist */,
 			);
 			path = Macathon2017;
+			sourceTree = "<group>";
+		};
+		4CA7C7411FB691B70062B5A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CA7C7421FB691C00062B5A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CA7C7431FB691CE0062B5A6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8039259EB56878E0828C9605 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82ABB76B6095FCE605D0ADBC /* Pods-Macathon2017.debug.xcconfig */,
+				D397BF20E9BCD56DF2C29FEA /* Pods-Macathon2017.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CA7C73E1FB691800062B5A6 /* Build configuration list for PBXNativeTarget "Macathon2017" */;
 			buildPhases = (
+				64679FB5D197F1011CCB6D6B /* [CP] Check Pods Manifest.lock */,
 				4CA7C7281FB691800062B5A6 /* Sources */,
 				4CA7C7291FB691800062B5A6 /* Frameworks */,
 				4CA7C72A1FB691800062B5A6 /* Resources */,
+				2DD1947EC775F1416C50CA88 /* [CP] Embed Pods Frameworks */,
+				E79DEAADEF61ED838EFA5D38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +179,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2DD1947EC775F1416C50CA88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Macathon2017/Pods-Macathon2017-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64679FB5D197F1011CCB6D6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Macathon2017-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E79DEAADEF61ED838EFA5D38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Macathon2017/Pods-Macathon2017-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4CA7C7281FB691800062B5A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CA7C7321FB691800062B5A6 /* ViewController.swift in Sources */,
 				4CA7C7301FB691800062B5A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,31 +370,35 @@
 		};
 		4CA7C73F1FB691800062B5A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82ABB76B6095FCE605D0ADBC /* Pods-Macathon2017.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45DBHK3PL2;
 				INFOPLIST_FILE = Macathon2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.Macathon2017;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4CA7C7401FB691800062B5A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D397BF20E9BCD56DF2C29FEA /* Pods-Macathon2017.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45DBHK3PL2;
 				INFOPLIST_FILE = Macathon2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.Macathon2017;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
