@@ -29,7 +29,14 @@ class SellerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         listItems.append(item2)
         listItems.append(item3)
         listItems.append(item4)
+        
+        // Set up the adding button bar button item on the right
+        self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action:#selector(addButtonAction(rightButton:)))
 
+    }
+    
+    @objc func addButtonAction(rightButton: UIBarButtonItem) {
+        return
     }
 
     override func didReceiveMemoryWarning() {

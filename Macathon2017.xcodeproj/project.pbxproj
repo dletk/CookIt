@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F30E2CA1FB6DD2600813D21 /* AddingItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F30E2C91FB6DD2600813D21 /* AddingItemVC.swift */; };
 		0F92C14C1FB6B1D9005664CA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F92C14B1FB6B1D9005664CA /* LoginVC.swift */; };
 		0FC6C3701FB6BDDB002B62CA /* SellerMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6C36F1FB6BDDB002B62CA /* SellerMainVC.swift */; };
 		4BA9DB15747D38379311086F /* Pods_Macathon2017.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FB89C440256FB586104766 /* Pods_Macathon2017.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F30E2C91FB6DD2600813D21 /* AddingItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingItemVC.swift; sourceTree = "<group>"; };
 		0F92C14B1FB6B1D9005664CA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0FC6C36F1FB6BDDB002B62CA /* SellerMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerMainVC.swift; sourceTree = "<group>"; };
 		4C5810E21FB69A8900DD37AE /* BuyerMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerMainVC.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				4C5810E21FB69A8900DD37AE /* BuyerMainVC.swift */,
 				0F92C14B1FB6B1D9005664CA /* LoginVC.swift */,
 				0FC6C36F1FB6BDDB002B62CA /* SellerMainVC.swift */,
+				0F30E2C91FB6DD2600813D21 /* AddingItemVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				4C5810E91FB6C9BD00DD37AE /* ItemSellCell.swift in Sources */,
 				4CA7C7301FB691800062B5A6 /* AppDelegate.swift in Sources */,
 				4C5810E51FB69D3900DD37AE /* Item.swift in Sources */,
+				0F30E2CA1FB6DD2600813D21 /* AddingItemVC.swift in Sources */,
 				4C5810E31FB69A8900DD37AE /* BuyerMainVC.swift in Sources */,
 				4C5810E71FB6AAC500DD37AE /* ItemBuyCell.swift in Sources */,
 				0F92C14C1FB6B1D9005664CA /* LoginVC.swift in Sources */,
