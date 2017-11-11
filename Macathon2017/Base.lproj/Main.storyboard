@@ -688,7 +688,11 @@
                         <viewLayoutGuide key="safeArea" id="Ofv-ET-4z9"/>
                     </view>
                     <navigationItem key="navigationItem" id="mb6-14-4h6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pQn-Ft-zF3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pQn-Ft-zF3">
+                            <connections>
+                                <action selector="addButtonTouched:" destination="W7d-el-Ieo" id="4bD-Yg-Pvt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemAddressLabel" destination="owO-lw-Foq" id="nK6-de-eqE"/>

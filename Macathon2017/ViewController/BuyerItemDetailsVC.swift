@@ -44,9 +44,20 @@ class BuyerItemDetailsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelButtonTouched(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func addButtonTouched(_ sender: UIBarButtonItem) {
+        let alertView = UIAlertController(title: "Please confirm", message: "Are you sure you want to buy this?", preferredStyle: .alert)
+        let actionYES = UIAlertAction(title: "Yes, buy it", style: .default, handler: {(actionSender) in
+            alertView.dismiss(animated: true, completion: nil)
+        })
+        let actionCancel = UIAlertAction(title: "No, cancel", style: .destructive, handler: {(actionSender) in
+            alertView.dismiss(animated: true, completion: nil)
+        })
+        alertView.addAction(actionYES)
+        alertView.addAction(actionCancel)
+        
+        self.present(alertView, animated: true, completion: nil)
     }
+    
     
     /*
     // MARK: - Navigation
