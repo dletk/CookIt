@@ -14,11 +14,11 @@ enum ServiceType {
     case eat_in
 }
 
-enum DietaryInfo {
-    case vegan
-    case halal
-    case seafood_watch
-    case peanut_watch
+enum DietaryInfo: String {
+    case vegan = "vegan"
+    case halal = "halal"
+    case seafood_watch = "seafood"
+    case peanut_watch = "peanut"
 }
 
 class Item {
@@ -37,6 +37,7 @@ class Item {
         self.type = type
         self.expectedNumOfServings = expectedNumOfServings
         self.serviceType = serviceType
+        self.dietaryInfo = dietaryInfo
     }
     
 }

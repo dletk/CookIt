@@ -32,7 +32,16 @@ class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemBuyerCell", for: indexPath) as UITableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemBuyerCell", for: indexPath) as? ItemBuyCell else {
+            fatalError("Cannot deque the cell")
+        }
+        let item = listItems[indexPath.row]
+        cell.itemName.text = item.itemName
+        cell.itemPriceLabel.text = String(item.price)
+        cell.itemServingLabel.text = String(item.expectedNumOfServings)
+        cell.itemTypeLabel.text = item.type
+        
+        
         
         return cell
     }
