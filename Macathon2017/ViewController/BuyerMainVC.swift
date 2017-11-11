@@ -10,6 +10,8 @@ import UIKit
 
 class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let item1  = Item(itemName: "Chicken", price: 12.1, location: "Saint Paul", dietaryInfo: [DietaryInfo.peanut_watch], type: "Entree", expectedNumOfServings: 2, serviceType: ServiceType.pick_up)
+    
     private var listItems: [Item] = []
     @IBOutlet weak var buyItemsTableView: UITableView!
     
@@ -18,6 +20,7 @@ class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         super.viewDidLoad()
         buyItemsTableView.delegate = self
         buyItemsTableView.dataSource = self
+        listItems.append(item1)
 
         // Do any additional setup after loading the view.
     }
