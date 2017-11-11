@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddingItemVC: UIViewController, UIImagePickerControllerDelegate {
+class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
@@ -20,6 +20,7 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate {
     @IBOutlet weak var typeButton: UIButton!
     @IBOutlet weak var serviceButton: UIButton!
     
+    private var imagePicker: UIImagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,9 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         itemImageView.isUserInteractionEnabled = true
         itemImageView.addGestureRecognizer(tapGestureRecognizer)
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+        addDoneButtonOnKeyboard()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +39,16 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate {
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        return
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError()
+        }
+        itemImageView.image = pickedImage
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 
@@ -123,7 +136,41 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    // Adds the done button to the number pad.
+    // Source URL: http://stackoverflow.com/questions/28338981/how-to-add-done-button-to-numpad-in-ios-8-using-swift
+    private func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle       = UIBarStyle.default
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.itemTextField.inputAccessoryView = doneToolbar
+        self.timeTextField.inputAccessoryView = doneToolbar
+        self.servingTextField.inputAccessoryView = doneToolbar
+        self.priceTextField.inputAccessoryView = doneToolbar
+        self.locationTextField.inputAccessoryView = doneToolbar
+    }
+    
+    // Gets rid of the number pad when the user hits "Done"
+    @objc public func doneButtonAction() {
+        self.itemTextField.resignFirstResponder()
+        self.timeTextField.resignFirstResponder()
+        self.servingTextField.resignFirstResponder()
+        self.priceTextField.resignFirstResponder()
+        self.locationTextField.resignFirstResponder()
+    }
     
     
     
