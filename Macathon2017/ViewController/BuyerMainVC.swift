@@ -50,17 +50,23 @@ class BuyerMainVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     @IBAction func locationButtonTouched(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Location", message: "Choose a location", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Location", message: "Choose a location", preferredStyle: .alert)
         // Here we need to retrieve the data from server to get the list of locations
         let listLocations = ["Macalester College", "Saint Paul", "Mineapollis"]
         for location in listLocations {
-            let locationAction = UIAlertAction(title: location, style: .destructive, handler: {(actionSender) in
+            let locationAction = UIAlertAction(title: location, style: .default, handler: {(actionSender) in
                 sender.setTitle(location, for: .normal)
             })
             alertController.addAction(locationAction)
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: {(actionSender) in
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+        // Here to server also needs to provide us the corresponding list of item of the chosen location
         // TODO: Refresh the list of dishes as well.
+        buyItemsTableView.reloadData()
     }
 }
 
