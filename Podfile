@@ -6,6 +6,5 @@ target 'Macathon2017' do
   use_frameworks!
 
   # Pods for Macathon2017
-  pod ‘RealmSwift’
 
 end
