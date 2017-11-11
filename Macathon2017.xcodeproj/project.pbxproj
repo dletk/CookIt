@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4BA9DB15747D38379311086F /* Pods_Macathon2017.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FB89C440256FB586104766 /* Pods_Macathon2017.framework */; };
+		4C5810E31FB69A8900DD37AE /* BuyerMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5810E21FB69A8900DD37AE /* BuyerMainVC.swift */; };
+		4C5810E51FB69D3900DD37AE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5810E41FB69D3900DD37AE /* Item.swift */; };
 		4CA7C7301FB691800062B5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C72F1FB691800062B5A6 /* AppDelegate.swift */; };
 		4CA7C7351FB691800062B5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7C7331FB691800062B5A6 /* Main.storyboard */; };
 		4CA7C7371FB691800062B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7C7361FB691800062B5A6 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C5810E21FB69A8900DD37AE /* BuyerMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerMainVC.swift; sourceTree = "<group>"; };
+		4C5810E41FB69D3900DD37AE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4CA7C72C1FB691800062B5A6 /* Macathon2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macathon2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA7C72F1FB691800062B5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA7C7341FB691800062B5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 		4CA7C7411FB691B70062B5A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C5810E41FB69D3900DD37AE /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		4CA7C7431FB691CE0062B5A6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4C5810E21FB69A8900DD37AE /* BuyerMainVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA7C7301FB691800062B5A6 /* AppDelegate.swift in Sources */,
+				4C5810E51FB69D3900DD37AE /* Item.swift in Sources */,
+				4C5810E31FB69A8900DD37AE /* BuyerMainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
