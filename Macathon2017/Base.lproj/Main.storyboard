@@ -30,9 +30,6 @@
                                         <rect key="frame" x="0.0" y="67" width="63" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Buyer"/>
-                                        <connections>
-                                            <segue destination="ARr-rn-y3G" kind="show" id="tW1-Kr-6Zb"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
