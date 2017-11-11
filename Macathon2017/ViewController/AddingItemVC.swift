@@ -6,6 +6,23 @@
 //  Copyright © 2017 Duc Le. All rights reserved.
 //
 
+extension UIImage {
+    func resized(withPercentage percentage: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    func resized(toWidth width: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+}
+
 import UIKit
 
 class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
@@ -19,6 +36,7 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     @IBOutlet weak var typeButton: UIButton!
     @IBOutlet weak var serviceButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
     
     private var imagePicker: UIImagePickerController = UIImagePickerController()
     
@@ -60,7 +78,7 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         guard let time = timeTextField.text else {
             fatalError()
         }
-        guard let location = locationTextField.text else {
+        guard let location = locationButton.currentTitle else {
             fatalError()
         }
         guard let price = priceTextField.text else {
@@ -72,6 +90,12 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         guard let image = itemImageView.image else {
             fatalError()
         }
+        // Scale down the image, because Realm cannot store image larger than 16MB
+        let scale_down_image = image.resized(toWidth: 500)
+        guard let imageData = UIImagePNGRepresentation(scale_down_image!) else {
+            fatalError()
+        }
+        
         
         var type: ItemType
         var service: ServiceType
@@ -94,7 +118,8 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             service = .delivery
         }
         
-        let newItem = Item(itemName: itemName, price: Double(price)!, location: location, dietaryInfo: [], type: type, expectedNumOfServings: Int(servings)!, serviceType: service, itemImage: image, time: time)
+        let newItem = Item(itemName: itemName, price: Double(price)!, location: location, type: type.rawValue, expectedNumOfServings: Int(servings)!, serviceType: service.rawValue, itemImage: imageData as NSData, time: time)
+        itemManager.addNewItem(item: newItem!)
         
         dismiss(animated: true, completion: nil)
     }
@@ -134,6 +159,24 @@ class AddingItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         })
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func locationButtonTouched(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Location", message: "Choose a location", preferredStyle: .alert)
+        // Here we need to retrieve the data from server to get the list of locations
+        let listLocations = ["Macalester College", "Saint Paul", "Mineapollis"]
+        for location in listLocations {
+            let locationAction = UIAlertAction(title: location, style: .default, handler: {(actionSender) in
+                sender.setTitle(location, for: .normal)
+            })
+            alertController.addAction(locationAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: {(actionSender) in
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+        // Here to server also needs to provide us the corresponding list of item of the chosen location
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

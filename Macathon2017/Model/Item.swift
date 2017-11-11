@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Realm
+import RealmSwift
 
 enum ServiceType: String {
     case pick_up = "Pick up"
@@ -34,25 +36,30 @@ enum ItemType: String {
     static let allItemTypes = [entree, desert, appertizer]
 }
 
-class Item {
-    var itemName: String
-    var price: Double
-    var time: String
-    var location: String
-    var dietaryInfo: [DietaryInfo]
-    var type: ItemType
-    var expectedNumOfServings: Int
-    var serviceType: ServiceType
-    var itemImage: UIImage
+class Item: Object {
+    @objc dynamic var itemName: String = ""
+    @objc dynamic var price: Double = 0.0
+    @objc dynamic var time: String = ""
+    @objc dynamic var location: String = ""
+//    @objc dynamic var dietaryInfo: [String] = []
+    @objc dynamic var type: String = ""
+    @objc dynamic var expectedNumOfServings: Int = 0
+    @objc dynamic var serviceType: String = ""
+    @objc dynamic var itemImage: NSData = NSData()
     
-    init(itemName: String, price: Double, location: String, dietaryInfo: [DietaryInfo], type: ItemType, expectedNumOfServings: Int, serviceType: ServiceType, itemImage: UIImage, time: String) {
+    convenience  init?(itemName: String, price: Double, location: String, type: String, expectedNumOfServings: Int, serviceType: String, itemImage: NSData, time: String) {
+        if itemName == "" {
+            return nil
+        }
+        
+        self.init()
+        
         self.itemName = itemName
         self.price = price
         self.location = location
         self.type = type
         self.expectedNumOfServings = expectedNumOfServings
         self.serviceType = serviceType
-        self.dietaryInfo = dietaryInfo
         self.itemImage = itemImage
         self.time = time
     }
